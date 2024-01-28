@@ -28,7 +28,7 @@ function App() {
     <Grommet theme={theme} full>
       <Main pad='large'>
         <AppBar>
-          {/* <Text size='large'>Budget Tracking App</Text> */}
+          <Text size='large'>Budget Tracking App</Text>
         </AppBar>
         <PageContent>
           <PageHeader title="Welcome to Grommet!"/>
