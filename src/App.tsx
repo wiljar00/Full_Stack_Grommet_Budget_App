@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Grommet, Header, Heading, Main, PageContent, PageHeader, Paragraph, Text, grommet } from 'grommet';
+import React, { useContext, useState } from 'react';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Grommet, Header, Heading, Main, PageContent, PageHeader, Paragraph, ResponsiveContext, Text, grommet } from 'grommet';
 import { Moon, Sun } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
 
@@ -35,6 +35,8 @@ const AppBar = (props : any) => (
 // {a,b} : {a:any, b:any}
 
 const CardTemplate = ({ title } : { title:any }) => {
+  const size = useContext(ResponsiveContext);
+
   return (
     <Card>
       <CardHeader pad="medium">
@@ -43,7 +45,7 @@ const CardTemplate = ({ title } : { title:any }) => {
         </Heading>
       </CardHeader>
       <CardBody pad="medium">
-        <Paragraph>
+        <Paragraph maxLines={size === "small" ? 3 : undefined}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
           porttitor non nulla ac vehicula. Aliquam erat volutpat. Mauris auctor
           faucibus est at mattis. Aliquam a enim ac nisi aliquam consectetur et
