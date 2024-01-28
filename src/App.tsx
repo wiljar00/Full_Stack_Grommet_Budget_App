@@ -1,16 +1,23 @@
 import React from 'react';
-import './App.css';
 import { Grommet, Heading, Main } from 'grommet';
+
+const theme = {
+  global: {
+    font: {
+      family: "Roboto",
+      size: "18px",
+      height: "20px",
+    },
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <Grommet>
-        <Main pad='large'>
-          <Heading level={1}>Budget Tracker App</Heading>
-        </Main>
-      </Grommet>
-    </div>
+    <Grommet theme={theme} full>
+      <Main pad='large'>
+        <Heading level={1}>Budget Tracker App</Heading>
+      </Main>
+    </Grommet>
   );
 }
 
