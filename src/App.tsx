@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Grommet, Header, Main, PageContent, PageHeader, Text, grommet } from 'grommet';
+import { Box, Button, Grommet, Header, Main, PageContent, PageHeader, Text, grommet } from 'grommet';
 import { Moon, Sun } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
 
@@ -40,6 +40,18 @@ function App() {
             a11yTitle={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
             icon={dark ? <Moon /> : <Sun />}
             onClick={() => setDark(!dark)}
+            tip={{
+              content: (
+                <Box
+                  pad="small"
+                  round="small"
+                  background={dark ? "dark-1" : "light-3"}
+                >
+                  {dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                </Box>
+              ),
+              plain: true,
+            }}
           />
         </AppBar>
         <PageContent>
