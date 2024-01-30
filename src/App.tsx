@@ -3,6 +3,7 @@ import { Box, Button, Grommet, Header, Main, PageContent, PageHeader, Tab, Tabs,
 import { Moon, Sun } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
 import SampleCard from './components/SampleCard';
+import BudgetTable from './components/BudgetTable';
 
 const theme = deepMerge(
   grommet,
@@ -65,7 +66,9 @@ function App() {
                 </Box>
               </Tab>
               <Tab title="Feburary">
-                <Box pad="medium">Feburary</Box>
+                <Box pad="medium">
+                  <BudgetTable />
+                </Box>
               </Tab>
             </Tabs>
 
