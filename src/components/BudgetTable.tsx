@@ -1,6 +1,18 @@
 import { Box, DataTable, Meter, Text } from "grommet";
 
+const generateMonths = (months: string[]) => {
+    const data = months.map((month, index) => ({
+        name: month,
+        percent: Math.random() * 100
+    }))
+    
+    return data;
+}
+
 const BudgetTable = () => {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
+    const tableData = generateMonths(months);
+
     return (
         <div>
             <DataTable
@@ -24,12 +36,7 @@ const BudgetTable = () => {
                     ),
                 },
                 ]}
-                data={[
-                    { name: 'Alan', percent: 20 },
-                    { name: 'Bryan', percent: 30 },
-                    { name: 'Chris', percent: 40 },
-                    { name: 'Eric', percent: 80 },
-                ]}
+                data={tableData}
             />
         </div>
     );

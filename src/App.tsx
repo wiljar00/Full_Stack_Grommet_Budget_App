@@ -60,12 +60,12 @@ function App() {
           <PageHeader title="Welcome to Grommet!"/>
 
             <Tabs>
-              <Tab title="January">
+              <Tab title="Expenses">
                 <Box pad="medium">
                   <SampleCard />
                 </Box>
               </Tab>
-              <Tab title="Feburary">
+              <Tab title="Budget Summary">
                 <Box pad="medium">
                   <BudgetTable />
                 </Box>
