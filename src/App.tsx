@@ -4,6 +4,7 @@ import { Moon, Sun } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
 import SampleCard from './components/SampleCard';
 import BudgetTable from './components/BudgetTable';
+import InputForm from './components/InputForm';
 
 const theme = deepMerge(
   grommet,
@@ -59,7 +60,10 @@ function App() {
         <PageContent>
           <br />
           <Tabs>
-          <Tab title="Expenses">
+            <Tab title='TestForm'>
+              <InputForm />
+            </Tab>
+            <Tab title="Expenses">
               <Box pad="medium">
                 <Text alignSelf='center'>
                   Add expenses. 
