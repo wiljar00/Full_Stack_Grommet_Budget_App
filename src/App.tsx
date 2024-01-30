@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Button, Grommet, Header, Main, PageContent, PageHeader, Tab, Tabs, Text, grommet } from 'grommet';
 import { Moon, Sun } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
