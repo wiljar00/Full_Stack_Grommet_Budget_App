@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Grommet, Header, Heading, Main, PageContent, PageHeader, Paragraph, ResponsiveContext, Text, grommet } from 'grommet';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Grommet, Header, Heading, Main, PageContent, PageHeader, Paragraph, ResponsiveContext, Tab, Tabs, Text, grommet } from 'grommet';
 import { Moon, Sun } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
 
@@ -87,6 +87,16 @@ function App() {
         </AppBar>
         <PageContent>
           <PageHeader title="Welcome to Grommet!"/>
+
+            <Tabs>
+              <Tab title="January">
+                <Box pad="medium">January</Box>
+              </Tab>
+              <Tab title="Feburary">
+                <Box pad="medium">Feburary</Box>
+              </Tab>
+            </Tabs>
+
           <CardTemplate title={"Card 1"} />
           <CardTemplate title={"Card 2"}/>
           <CardTemplate title={"Card 3"}/>
