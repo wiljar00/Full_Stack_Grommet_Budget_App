@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Box, Button, Card, CardBody, DateInput, Heading, TextInput } from "grommet";
 
-
-
 const InputForm = () => {
-    const [value, setValue] = React.useState('');
+    const [inputValue, setInputValue] = useState('');
     const [amounts, setAmount] = useState<number[]>([]);
 
     const addAmount = () => {
-        const amount = parseFloat(value);
+        const amount = parseFloat(inputValue);
         if (!isNaN(amount)) {
             setAmount(prevAmounts => [...prevAmounts, amount]);
-            setValue('');
+            setInputValue('');
         }
     } 
 
@@ -28,8 +26,8 @@ const InputForm = () => {
                 <Box direction="row">
                     <TextInput
                         placeholder="Enter an amount"
-                        value={value}
-                        onChange={event => setValue(event.target.value)}
+                        value={inputValue}
+                        onChange={event => setInputValue(event.target.value)}
                     />
                     <DateInput
                         format="mm/dd/yyyy"
@@ -37,7 +35,6 @@ const InputForm = () => {
                         onChange={({ value }) => {}}
                     />
                     <Button primary label="Add"
-                         
                         onClick={addAmount}
                     />
                 </Box>
