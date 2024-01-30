@@ -13,6 +13,12 @@ const InputForm = () => {
         }
     } 
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            addAmount();
+        };
+    }
+
     const total = amounts.reduce((acc, curr) => acc + curr, 0)
 
     return (
@@ -28,6 +34,7 @@ const InputForm = () => {
                         placeholder="Enter an amount"
                         value={inputValue}
                         onChange={event => setInputValue(event.target.value)}
+                        onKeyDown={handleKeyDown}
                     />
                     <DateInput
                         format="mm/dd/yyyy"
