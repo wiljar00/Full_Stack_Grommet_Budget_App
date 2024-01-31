@@ -7,6 +7,7 @@ import BudgetTable from './components/BudgetTable';
 import InputForm from './components/InputForm';
 import ExpensePage from './components/ExpensePage';
 import IncomePage from './components/IncomePage';
+import EntryFeed from './components/EntryFeed';
 
 const theme = deepMerge(
   grommet,
@@ -83,18 +84,17 @@ function App() {
                 <Tabs>
                   <Tab title="January" >
                     <Box pad="medium">
-                      <Text>
-                        expense     date
-                      </Text>
-                      <Text>
-                        income     date
-                      </Text>
-                      <Text>
-                        expense...
-                      </Text>
-                      <Text>
-                        income     date
-                      </Text>
+                      <EntryFeed />
+                    </Box>
+                  </Tab>
+                  <Tab title="Feburary" >
+                    <Box pad="medium">
+                      <EntryFeed />
+                    </Box>
+                  </Tab>
+                  <Tab title="March" >
+                    <Box pad="medium">
+                      <EntryFeed />
                     </Box>
                   </Tab>
                 </Tabs>
