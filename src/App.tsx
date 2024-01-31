@@ -5,6 +5,7 @@ import { deepMerge } from 'grommet/utils';
 import SampleCard from './components/SampleCard';
 import BudgetTable from './components/BudgetTable';
 import InputForm from './components/InputForm';
+import ExpensePage from './components/ExpensePage';
 
 const theme = deepMerge(
   grommet,
@@ -71,12 +72,7 @@ function App() {
                   Add total to page and app.
                   When saving, update totals.
                 </Text>
-                <Text>
-                  expense     date
-                </Text>
-                <Text>
-                  expense     date
-                </Text>
+                <ExpensePage />
               </Box>
             </Tab>
             <Tab title="Income">

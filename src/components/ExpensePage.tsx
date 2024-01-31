@@ -1,10 +1,11 @@
-import BudgetTable from "./BudgetTable";
+import EntryCard from "./EntryCard";
+import InputForm from "./InputForm";
 
 const ExpensePage = () => {
     return (
         <div>
-            <BudgetTable />
-
+            <InputForm />
+            <EntryCard />
         </div>
     );
 }
