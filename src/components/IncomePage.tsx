@@ -2,14 +2,11 @@ import { Text } from "grommet";
 import EntryCard from "./EntryCard";
 import InputForm from "./InputForm";
 
-const ExpensePage = () => {
+const IncomePage = () => {
     return (
         <div>
             <Text alignSelf='center'>
-                Add expenses. 
-                TODO: App should have a box/form for amount and date.
-                Add total to page and app.
-                When saving, update totals.
+                Add incomes. App should have a box for amount and date and totals
             </Text>
             <InputForm />
             <EntryCard />
@@ -17,4 +14,4 @@ const ExpensePage = () => {
     );
 }
 
-export default ExpensePage;
+export default IncomePage;

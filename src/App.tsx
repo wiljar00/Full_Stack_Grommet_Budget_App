@@ -6,6 +6,7 @@ import SampleCard from './components/SampleCard';
 import BudgetTable from './components/BudgetTable';
 import InputForm from './components/InputForm';
 import ExpensePage from './components/ExpensePage';
+import IncomePage from './components/IncomePage';
 
 const theme = deepMerge(
   grommet,
@@ -66,26 +67,12 @@ function App() {
             </Tab>
             <Tab title="Expenses">
               <Box pad="medium">
-                <Text alignSelf='center'>
-                  Add expenses. 
-                  TODO: App should have a box/form for amount and date.
-                  Add total to page and app.
-                  When saving, update totals.
-                </Text>
                 <ExpensePage />
               </Box>
             </Tab>
             <Tab title="Income">
               <Box pad="medium">
-                <Text alignSelf='center'>
-                  Add incomes. App should have a box for amount and date and totals
-                </Text>
-                <Text>
-                  income     date
-                </Text>
-                <Text>
-                  income     date
-                </Text>
+                <IncomePage />
               </Box>
             </Tab>
             <Tab title="Combined view">
