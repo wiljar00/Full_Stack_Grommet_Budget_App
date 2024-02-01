@@ -8,14 +8,20 @@ interface EntryCardProps {
 }
 
 const EntryCard: React.FC<EntryCardProps> = ({ entry }) => (
-    <Card>
-        <CardBody pad="medium">
+    <Card width='large' alignSelf="center" >
+        <CardBody pad="medium" alignSelf="center">
             <Text>
                 {`$ ${entry.amount.toFixed(2)} - ${entry.description}`}
             </Text>
         </CardBody>
-        <CardFooter pad="medium" background="background-contrast">
-            {`Description: ${entry.description}  -  date`}
+        <CardFooter pad="medium" background="background-contrast" >
+            <Text>
+                {`Description: ${entry.description}`}
+            </Text>
+            <Text>
+                {/* need to pass in date with entry */}
+                {`Date: 11/11/2024`}
+            </Text>
         </CardFooter>
     </Card>
 );

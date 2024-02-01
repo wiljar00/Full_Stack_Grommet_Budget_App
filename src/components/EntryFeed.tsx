@@ -11,7 +11,7 @@ interface EntryFeedProps {
 }
 
 const EntryFeed: React.FC<EntryFeedProps> = ({ entries }) => (
-    <Box direction="row" gap="small" align="center" width="100%">
+    <Box direction="column" gap="small" align="center">
         {entries.map((entry, index) => (
             <EntryCard key={index} entry={entry} />
         ))}
