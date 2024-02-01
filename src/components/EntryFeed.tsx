@@ -2,12 +2,13 @@ import { Box } from "grommet";
 import EntryCard from "./EntryCard";
 
 interface Entry {
-  amount: number;
-  description: string;
+    amount: number;
+    description: string;
+    date: string;
 }
 
 interface EntryFeedProps {
-  entries: Entry[];
+    entries: Entry[];
 }
 
 const EntryFeed: React.FC<EntryFeedProps> = ({ entries }) => (

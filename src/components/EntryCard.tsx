@@ -4,6 +4,7 @@ interface EntryCardProps {
     entry: {
         amount: number;
         description: string;
+        date: string
     };
 }
 
@@ -19,8 +20,7 @@ const EntryCard: React.FC<EntryCardProps> = ({ entry }) => (
                 {`Description: ${entry.description}`}
             </Text>
             <Text>
-                {/* need to pass in date with entry */}
-                {`Date: 11/11/2024`}
+                {`${entry.date}`}
             </Text>
         </CardFooter>
     </Card>

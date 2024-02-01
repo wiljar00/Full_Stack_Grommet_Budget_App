@@ -5,24 +5,32 @@ import EntryFeed from "./EntryFeed";
 interface Entry {
     amount: number;
     description: string;
+    date: string;
 }
 
 const InputForm: React.FC = () => {
     const [inputAmount, setInputAmount] = useState('');
     const [inputDescription, setInputDescription] = useState('');
+    const [inputDate, setInputDate] = useState(new Date().toLocaleDateString('en-US'));
     const [entries, setEntries] = useState<Entry[]>([]);
     const [showError, setShowError] = useState(false);
 
     const addEntry = () => {
         const amount = parseFloat(inputAmount);
         if (!isNaN(amount) && inputDescription.trim() !== '') {
-        const newEntry: Entry = { amount, description: inputDescription };
-        setEntries(prevEntries => [...prevEntries, newEntry]);
-        setInputAmount('');
-        setInputDescription('');
+            const newEntry: Entry = { amount, description: inputDescription, date: inputDate };
+            setEntries(prevEntries => [...prevEntries, newEntry]);
+            setInputAmount('');
+            setInputDescription('');
+            setInputDate('');
         } else {
-        setShowError(true);
+            setShowError(true);
         }
+    }
+
+    const onDateChange = (value : any) => {
+        // This is to fix a typescript error. Need to research better ways to handle this. 
+        setInputDate(value)
     }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -59,8 +67,8 @@ const InputForm: React.FC = () => {
                     />
                     <DateInput
                         format="mm/dd/yyyy"
-                        value={(new Date()).toISOString()}
-                        onChange={({ value }) => { }}
+                        value={inputDate}
+                        onChange={( event ) => onDateChange(event.value)}
                     />
                     <Button primary label="Add" onClick={addEntry} />
                 </Box>
