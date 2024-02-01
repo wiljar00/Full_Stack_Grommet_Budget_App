@@ -40,7 +40,7 @@ const InputForm: React.FC = () => {
 
                 <br />
 
-                <Card width="medium" align="center" alignSelf='center' background="light-1" margin="small">
+                <Card width="medium" align="center" alignSelf='center' background="light-3" margin="small">
                     <CardBody pad="medium">{`Total: $ ${total.toFixed(2)}`}</CardBody>
                 </Card>
 

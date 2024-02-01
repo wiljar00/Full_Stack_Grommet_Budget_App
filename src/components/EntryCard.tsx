@@ -11,7 +11,7 @@ const EntryCard: React.FC<EntryCardProps> = ({ entry }) => (
     <Card width='large' alignSelf="center" >
         <CardBody pad="medium" alignSelf="center">
             <Text>
-                {`$ ${entry.amount.toFixed(2)} - ${entry.description}`}
+                {`$ ${entry.amount.toFixed(2)}`}
             </Text>
         </CardBody>
         <CardFooter pad="medium" background="background-contrast" >

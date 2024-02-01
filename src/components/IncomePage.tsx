@@ -9,7 +9,6 @@ const IncomePage = () => {
                 Add incomes. App should have a box for amount and date and totals
             </Text>
             <InputForm />
-            {/* <EntryCard /> */}
         </div>
     );
 }

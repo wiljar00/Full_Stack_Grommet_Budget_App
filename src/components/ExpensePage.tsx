@@ -1,5 +1,4 @@
 import { Text } from "grommet";
-// import EntryCard from "./EntryCard";
 import InputForm from "./InputForm";
 
 const ExpensePage = () => {
@@ -12,7 +11,6 @@ const ExpensePage = () => {
                 When saving, update totals.
             </Text>
             <InputForm />
-            {/* <EntryCard /> */}
         </div>
     );
 }
