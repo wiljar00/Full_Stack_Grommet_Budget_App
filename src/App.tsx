@@ -7,6 +7,7 @@ import BudgetTable from './components/BudgetTable';
 import InputForm from './components/InputForm';
 import ExpensePage from './components/ExpensePage';
 import IncomePage from './components/IncomePage';
+import CombinedPage from './components/CombinedPage';
 
 const theme = deepMerge(
   grommet,
@@ -76,34 +77,7 @@ function App() {
               </Box>
             </Tab>
             <Tab title="Combined view">
-              <Box pad="medium">
-                <Text alignSelf='center'>
-                  This will show all expenses combined by months ordered by date. 
-                </Text>
-                <Tabs>
-                  <Tab title="January" >
-                    <Box pad="medium">
-                      <Text alignSelf='center'>
-                        entry feed.... 
-                      </Text>
-                    </Box>
-                  </Tab>
-                  <Tab title="Feburary" >
-                    <Box pad="medium">
-                      <Text alignSelf='center'>
-                        entry feed.... 
-                      </Text>
-                    </Box>
-                  </Tab>
-                  <Tab title="March" >
-                    <Box pad="medium">
-                      <Text alignSelf='center'>
-                        entry feed.... 
-                      </Text>
-                    </Box>
-                  </Tab>
-                </Tabs>
-              </Box>
+              <CombinedPage />
             </Tab>
             <Tab title="Budget Summary">
               <Box pad="medium">
