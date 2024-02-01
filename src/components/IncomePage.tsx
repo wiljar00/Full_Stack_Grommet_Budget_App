@@ -1,5 +1,5 @@
 import { Text } from "grommet";
-import EntryCard from "./EntryCard";
+// import EntryCard from "./EntryCard";
 import InputForm from "./InputForm";
 
 const IncomePage = () => {
@@ -9,7 +9,7 @@ const IncomePage = () => {
                 Add incomes. App should have a box for amount and date and totals
             </Text>
             <InputForm />
-            <EntryCard />
+            {/* <EntryCard /> */}
         </div>
     );
 }

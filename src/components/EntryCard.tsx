@@ -1,42 +1,23 @@
 import { Card, CardBody, CardFooter, Text } from "grommet";
 
-const EntryCard = () => {
-    return (
-        <div>
-            <Card>
-                <CardBody pad="medium">
-                    <Text>
-                        Amount     -----     Date
-                    </Text>
-                </CardBody>
-                <CardFooter pad="medium" background="background-contrast">
-                    Footer
-                </CardFooter>
-            </Card>
-
-            <Card>
-                <CardBody pad="medium">
-                    <Text>
-                        Amount     -----     Date
-                    </Text>
-                </CardBody>
-                <CardFooter pad="medium" background="background-contrast">
-                    Footer
-                </CardFooter>
-            </Card>
-
-            <Card>
-                <CardBody pad="medium">
-                    <Text>
-                        Amount     -----     Date
-                    </Text>
-                </CardBody>
-                <CardFooter pad="medium" background="background-contrast">
-                    Footer
-                </CardFooter>
-            </Card>
-        </div>
-    );
+interface EntryCardProps {
+    entry: {
+        amount: number;
+        description: string;
+    };
 }
+
+const EntryCard: React.FC<EntryCardProps> = ({ entry }) => (
+    <Card>
+        <CardBody pad="medium">
+            <Text>
+                {`$ ${entry.amount.toFixed(2)} - ${entry.description}`}
+            </Text>
+        </CardBody>
+        <CardFooter pad="medium" background="background-contrast">
+            {`Description: ${entry.description}  -  date`}
+        </CardFooter>
+    </Card>
+);
 
 export default EntryCard;

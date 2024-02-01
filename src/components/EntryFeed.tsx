@@ -1,4 +1,5 @@
-import { Card, CardBody } from "grommet";
+import { Box } from "grommet";
+import EntryCard from "./EntryCard";
 
 interface Entry {
   amount: number;
@@ -10,13 +11,11 @@ interface EntryFeedProps {
 }
 
 const EntryFeed: React.FC<EntryFeedProps> = ({ entries }) => (
-    <div>
+    <Box direction="row" gap="small" align="center" width="100%">
         {entries.map((entry, index) => (
-        <Card key={index} width="medium" align="center" alignSelf='center' background="light-1" margin="small">
-            <CardBody pad="medium">{`$ ${entry.amount.toFixed(2)} - ${entry.description}`}</CardBody>
-        </Card>
+            <EntryCard key={index} entry={entry} />
         ))}
-    </div>
+    </Box>
 );
 
 export default EntryFeed;
