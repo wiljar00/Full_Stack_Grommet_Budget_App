@@ -63,9 +63,9 @@ function App() {
         <PageContent>
           <br />
           <Tabs>
-            <Tab title='TestForm'>
-              <InputForm />
-            </Tab>
+            {/* <Tab title='TestForm'>
+              <InputForm entries={} setEntries={} entryType="test"  />
+            </Tab> */}
             <Tab title="Expenses">
               <Box pad="medium">
                 <ExpensePage />

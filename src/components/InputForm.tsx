@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { Box, Button, Card, CardBody, DateInput, Heading, Layer, Text, TextInput } from "grommet";
 import EntryFeed from "./EntryFeed";
 
@@ -8,11 +9,17 @@ interface Entry {
     date: string;
 }
 
-const InputForm: React.FC = () => {
+interface InputFormProps {
+    entries: Entry[];
+    setEntries: Dispatch<SetStateAction<Entry[]>>;
+    entryType: string;
+}
+
+const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType }) => {
     const [inputAmount, setInputAmount] = useState('');
     const [inputDescription, setInputDescription] = useState('');
     const [inputDate, setInputDate] = useState(new Date().toLocaleDateString('en-US'));
-    const [entries, setEntries] = useState<Entry[]>([]);
+    // const [entries, setEntries] = useState<Entry[]>([]);
     const [showError, setShowError] = useState(false);
 
     const addEntry = () => {
@@ -44,7 +51,7 @@ const InputForm: React.FC = () => {
     return (
         <div>
             <Box direction="column">
-                <Heading level={2} alignSelf="center">Entries</Heading>
+                <Heading level={2} alignSelf="center">`${entryType}`</Heading>
 
                 <br />
 
@@ -73,7 +80,7 @@ const InputForm: React.FC = () => {
                     <Button primary label="Add" onClick={addEntry} />
                 </Box>
 
-                <EntryFeed entries={entries} />
+                <EntryFeed entries={entries} entryType={entryType} />
             </Box>
 
             {showError && (

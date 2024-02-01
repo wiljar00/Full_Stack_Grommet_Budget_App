@@ -1,16 +1,22 @@
-import { Text } from "grommet";
-// import EntryCard from "./EntryCard";
+import React, { useState } from "react";
 import InputForm from "./InputForm";
+import EntryFeed from "./EntryFeed";
 
-const IncomePage = () => {
-    return (
-        <div>
-            <Text alignSelf='center'>
-                Add incomes. App should have a box for amount and date and totals
-            </Text>
-            <InputForm />
-        </div>
-    );
+interface Entry {
+    amount: number;
+    description: string;
+    date: string;
+}
+
+const IncomePage: React.FC = () => {
+    const [incomeEntries, setIncomeEntries] = useState<Entry[]>([]);
+
+  return (
+    <div>
+      <h1>Income Page</h1>
+      <InputForm entries={incomeEntries} setEntries={setIncomeEntries} entryType="income" />
+    </div>
+  );
 }
 
 export default IncomePage;
