@@ -31,7 +31,13 @@ const InputForm = () => {
                 </Card>
                 <Box direction="row">
                     <TextInput
-                        placeholder="Enter an amount"
+                        placeholder="Enter amount..."
+                        value={inputValue}
+                        onChange={event => setInputValue(event.target.value)}
+                        onKeyDown={handleKeyDown}
+                    />
+                    <TextInput
+                        placeholder="Enter description..."
                         value={inputValue}
                         onChange={event => setInputValue(event.target.value)}
                         onKeyDown={handleKeyDown}
