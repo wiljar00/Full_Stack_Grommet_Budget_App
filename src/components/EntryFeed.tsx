@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardBody } from "grommet";
+import { Box } from "grommet";
 import EntryCard from "./EntryCard";
 
 interface Entry {

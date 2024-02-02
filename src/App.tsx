@@ -4,7 +4,6 @@ import { Moon, Sun } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
 import SampleCard from './components/SampleCard';
 import BudgetTable from './components/BudgetTable';
-import InputForm from './components/InputForm';
 import ExpensePage from './components/ExpensePage';
 import IncomePage from './components/IncomePage';
 import CombinedPage from './components/CombinedPage';

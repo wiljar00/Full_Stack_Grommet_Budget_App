@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import InputForm from "./InputForm";
-import EntryFeed from "./EntryFeed";
 
 interface Entry {
     amount: number;
