@@ -1,25 +1,24 @@
 import React from "react";
-import { Card, CardBody } from "grommet";
+import { Box, Card, CardBody } from "grommet";
+import EntryCard from "./EntryCard";
 
 interface Entry {
   amount: number;
   description: string;
+  date: string;
 }
 
 interface EntryFeedProps {
   entries: Entry[];
-  entryType: string; // Add a prop for the entry type
+  entryType: string; 
 }
 
-const EntryFeed: React.FC<EntryFeedProps> = ({ entries, entryType }) => (
-  <div>
-    <h2>{entryType === 'expense' ? 'Expense Entries' : 'Income Entries'}</h2>
+const EntryFeed: React.FC<EntryFeedProps> = ({ entries, entryType}) => (
+  <Box direction="column" gap="small" align="center">
     {entries.map((entry, index) => (
-      <Card key={index} width="medium" align="center" alignSelf='center' background="light-1" margin="small">
-        <CardBody pad="medium">{`$ ${entry.amount.toFixed(2)} - ${entry.description}`}</CardBody>
-      </Card>
+        <EntryCard key={index} entry={entry}/>
     ))}
-  </div>
+  </Box>
 );
 
 export default EntryFeed;

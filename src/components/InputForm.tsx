@@ -35,15 +35,19 @@ const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType })
         }
     }
 
-    const onDateChange = (value : any) => {
+    const onDateChange = (value: any) => {
         // This is to fix a typescript error. Need to research better ways to handle this. 
         setInputDate(value)
     }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
-        addEntry();
+            addEntry();
         }
+    }
+
+    function formatTitle(string : string) {
+        return string.charAt(0).toUpperCase() + string.slice(1) + ' Entries';
     }
 
     const total = entries.reduce((acc, entry) => acc + entry.amount, 0);
@@ -51,7 +55,7 @@ const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType })
     return (
         <div>
             <Box direction="column">
-                <Heading level={2} alignSelf="center">`${entryType}`</Heading>
+                <Heading level={2} alignSelf="center">{`${formatTitle(entryType)}`}</Heading>
 
                 <br />
 
@@ -75,12 +79,12 @@ const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType })
                     <DateInput
                         format="mm/dd/yyyy"
                         value={inputDate}
-                        onChange={( event ) => onDateChange(event.value)}
+                        onChange={(event) => onDateChange(event.value)}
                     />
                     <Button primary label="Add" onClick={addEntry} />
                 </Box>
 
-                <EntryFeed entries={entries} entryType={entryType} />
+                <EntryFeed entries={entries} entryType={entryType}/>
             </Box>
 
             {showError && (
