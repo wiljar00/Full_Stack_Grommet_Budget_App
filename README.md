@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Budget / Expense Tracker App 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bugeting app built in React, Node, and Grommet.
+This was built as a dev sandbox for learning new technologies, specifically React and Grommet.  
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Running the App](#running-the-app)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+TBD
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+- [Node.js](https://nodejs.org/) (Version X.X.X)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/) package manager
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    git clone https://github.com/wiljar00/expense-tracker-grommet.git
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Navigate to the project directory:**
 
-### `npm run eject`
+    ```bash
+    cd expense-tracker-grommet
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. **Install dependencies for the frontend:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    cd frontend
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. **Install dependencies for the backend:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```bash
+    cd ../backend
+    npm install
+    ```
 
-## Learn More
+5. **Install global dependencies in the root directory:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    npm install
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running the App
+
+1. **Start the frontend development server:**
+
+    ```bash
+    npm run start-frontend
+    ```
+
+   The frontend will be accessible at [http://localhost:3000](http://localhost:3000).
+
+2. **Start the backend server:**
+
+    ```bash
+    npm run start-backend
+    ```
+
+   The backend server will be accessible at [http://localhost:YOUR_BACKEND_PORT](http://localhost:YOUR_BACKEND_PORT).
+
+3. **Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to use the app.**
+
+## Project Structure
+
+TBD
+
+## Technologies Used
+
+List the technologies, frameworks, and libraries used in your project.
+
+- React
+- Node.js
+- Express
+- MongoDB
+- ...
