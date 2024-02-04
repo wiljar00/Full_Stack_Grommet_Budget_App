@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { Box, Button, TextInput } from 'grommet';
+import React, { useState } from 'react';
+import { Box, Button, TextInput, DateInput } from 'grommet';
+import EntryCard from './EntryCard'; // Import your EntryCard component
 
 interface Entry {
   id: number;
@@ -9,51 +10,111 @@ interface Entry {
 }
 
 const EntryDetail: React.FC = () => {
-  const [entry, setEntry] = useState<Entry | null>(null);
+  const [searchedEntry, setSearchedEntry] = useState<Entry | null>(null);
   const [loading, setLoading] = useState(false);
   const [inputId, setInputId] = useState('');
+  const [inputAmount, setInputAmount] = useState('');
+  const [inputDescription, setInputDescription] = useState('');
+  const [inputDate, setInputDate] = useState('');
+  const [entries, setEntries] = useState<Entry[]>([]);
 
   const fetchEntryById = async (id: number) => {
     try {
-        setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/entries/${id}`);
-        const data: Entry = await response.json();
-        setEntry(data);
+      setLoading(true);
+      const response = await fetch(`http://localhost:5000/api/entries/${id}`);
+      const data: Entry = await response.json();
+      setSearchedEntry(data);
     } catch (error) {
-        console.error('Error fetching entry:', error);
-        setEntry(null);
+      console.error('Error fetching entry:', error);
+      setSearchedEntry(null);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
   };
 
-  const handleButtonClick = () => {
+  const handleSearchById = () => {
     const id = parseInt(inputId, 10);
     if (!isNaN(id)) {
-        fetchEntryById(id);
+      fetchEntryById(id);
+    }
+  };
+
+  const onDateChange = (value: any) => {
+    // This is to fix a typescript error. Need to research better ways to handle this. 
+    setInputDate(value)
+}
+
+  const handleAddEntry = async () => {
+    const amount = parseFloat(inputAmount);
+    if (!isNaN(amount) && inputDescription.trim() !== '') {
+      const newEntry: Entry = {
+        id: entries.length + 1, // Auto-increment ID or handle it appropriately in your backend
+        amount,
+        description: inputDescription,
+        date: inputDate || new Date().toISOString(),
+      };
+
+      setEntries((prevEntries) => [...prevEntries, newEntry]);
+
+      try {
+        const response = await fetch('http://localhost:5000/api/entries', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newEntry),
+        });
+
+        if (!response.ok) {
+          console.error('Failed to add entry:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error adding entry:', error);
+      }
     }
   };
 
   return (
     <Box align="center" pad="medium">
-        <h1>Entry Detail</h1>
-            <Box direction="row" gap="small">
-                <TextInput
-                    placeholder="Enter Entry ID"
-                    value={inputId}
-                    onChange={(event) => setInputId(event.target.value)}
-                />
-                <Button label="Fetch Entry" onClick={handleButtonClick} primary />
-            </Box>
-            {loading && <p>Loading...</p>}
-            {entry && (
-                <Box>
-                    <p>ID: {entry.id}</p>
-                    <p>Amount: {entry.amount}</p>
-                    <p>Description: {entry.description}</p>
-                    <p>Date: {entry.date}</p>
-                </Box>
-        )}
+      <h1>Entry Detail</h1>
+
+      <Box direction="row" gap="small" margin={{ bottom: 'medium' }}>
+        <TextInput
+          placeholder="Enter Entry ID"
+          value={inputId}
+          onChange={(event) => setInputId(event.target.value)}
+        />
+        <Button label="Search by ID" onClick={handleSearchById} primary />
+      </Box>
+
+      {loading && <p>Loading...</p>}
+      {searchedEntry && <EntryCard entry={searchedEntry} />}
+
+      <Box direction="row" gap="small">
+        <TextInput
+          placeholder="Enter Amount"
+          value={inputAmount}
+          onChange={(event) => setInputAmount(event.target.value)}
+        />
+        <TextInput
+          placeholder="Enter Description"
+          value={inputDescription}
+          onChange={(event) => setInputDescription(event.target.value)}
+        />
+        <DateInput
+          format="mm/dd/yyyy"
+          value={inputDate}
+          onChange={(event) => onDateChange(event.value)}
+        />
+        <Button label="Add Entry" onClick={handleAddEntry} primary />
+      </Box>
+
+      {/* Section to display existing entries */}
+      <Box direction="row" gap="small" margin={{ top: 'medium' }}>
+        {entries.map((entry) => (
+          <EntryCard key={entry.id} entry={entry} />
+        ))}
+      </Box>
     </Box>
   );
 };
