@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "amount": 50.25,
+      "description": "Sample Entry 1",
+      "date": "2022-02-15T10:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "amount": 30.75,
+      "description": "Sample Entry 2",
+      "date": "2022-02-16T12:45:00.000Z"
+    },
+    {
+      "id": 3,
+      "amount": 22.50,
+      "description": "Sample Entry 3",
+      "date": "2022-02-17T14:15:00.000Z"
+    },
+    {
+      "id": 4,
+      "amount": 45.00,
+      "description": "Sample Entry 4",
+      "date": "2022-02-18T16:30:00.000Z"
+    },
+    {
+      "id": 5,
+      "amount": 60.50,
+      "description": "Sample Entry 5",
+      "date": "2022-02-19T18:45:00.000Z"
+    },
+    {
+      "id": 6,
+      "amount": 33.25,
+      "description": "Sample Entry 6",
+      "date": "2022-02-20T20:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "amount": 75.00,
+      "description": "Sample Entry 7",
+      "date": "2022-02-21T22:15:00.000Z"
+    },
+    {
+      "id": 8,
+      "amount": 40.50,
+      "description": "Sample Entry 8",
+      "date": "2022-02-22T08:30:00.000Z"
+    },
+    {
+      "id": 9,
+      "amount": 55.75,
+      "description": "Sample Entry 9",
+      "date": "2022-02-23T10:45:00.000Z"
+    },
+    {
+      "id": 10,
+      "amount": 90.00,
+      "description": "Sample Entry 10",
+      "date": "2022-02-24T12:00:00.000Z"
+    }
+]
