@@ -76,7 +76,7 @@ const EntryDetail: React.FC = () => {
 
   return (
     <Box align="center" pad="medium">
-      <h1>Entry Detail</h1>
+      <h1>Search Entries</h1>
 
       <Box direction="row" gap="small" margin={{ bottom: 'medium' }}>
         <TextInput
@@ -90,7 +90,8 @@ const EntryDetail: React.FC = () => {
       {loading && <p>Loading...</p>}
       {searchedEntry && <EntryCard entry={searchedEntry} />}
 
-      <Box direction="row" gap="small">
+      <h1>Create New Entry</h1>
+      <Box pad='medium' direction="row" gap="small">
         <TextInput
           placeholder="Enter Amount"
           value={inputAmount}
@@ -109,7 +110,7 @@ const EntryDetail: React.FC = () => {
         <Button label="Add Entry" onClick={handleAddEntry} primary />
       </Box>
 
-      {/* Section to display existing entries */}
+      <h2>Recent Entries</h2>
       <Box direction="row" gap="small" margin={{ top: 'medium' }}>
         {entries.map((entry) => (
           <EntryCard key={entry.id} entry={entry} />

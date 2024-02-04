@@ -64,5 +64,11 @@
     "amount": 100,
     "description": "testing stuff",
     "date": "2024-02-01T07:00:00.000Z"
+  },
+  {
+    "id": 12,
+    "amount": 22,
+    "description": "test",
+    "date": "2024-02-01T07:00:00.000Z"
   }
 ]
