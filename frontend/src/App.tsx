@@ -7,6 +7,7 @@ import BudgetTable from './components/BudgetTable';
 import ExpensePage from './components/ExpensePage';
 import IncomePage from './components/IncomePage';
 import CombinedPage from './components/CombinedPage';
+import EntryDetail from './components/EntryDetails';
 
 const theme = deepMerge(
   grommet,
@@ -62,9 +63,6 @@ function App() {
         <PageContent>
           <br />
           <Tabs>
-            {/* <Tab title='TestForm'>
-              <InputForm entries={} setEntries={} entryType="test"  />
-            </Tab> */}
             <Tab title="Expenses">
               <Box pad="medium">
                 <ExpensePage />
@@ -88,6 +86,11 @@ function App() {
               <Box pad="medium">
                 <SampleCard />
               </Box>
+            </Tab>
+
+            <Tab title='TestForm'>
+              {/* Hits the backend server to get data */}
+              <EntryDetail />
             </Tab>
 
           </Tabs>
