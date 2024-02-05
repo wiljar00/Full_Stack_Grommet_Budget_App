@@ -11,38 +11,14 @@ interface Entry {
 }
 
 const EntryDetail: React.FC = () => {
-  const [searchedEntry, setSearchedEntry] = useState<Entry | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [inputId, setInputId] = useState('');
   const [inputAmount, setInputAmount] = useState('');
   const [inputDescription, setInputDescription] = useState('');
   const [inputDate, setInputDate] = useState('');
   const [entries, setEntries] = useState<Entry[]>([]);
 
-  const fetchEntryById = async (id: number) => {
-    try {
-      setLoading(true);
-      const response = await fetch(`http://localhost:5000/api/entries/${id}`);
-      const data: Entry = await response.json();
-      setSearchedEntry(data);
-    } catch (error) {
-      console.error('Error fetching entry:', error);
-      setSearchedEntry(null);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleSearchById = () => {
-    const id = parseInt(inputId, 10);
-    if (!isNaN(id)) {
-      fetchEntryById(id);
-    }
-  };
-
   const onDateChange = (value: any) => {
     setInputDate(value)
-}
+  }
 
   const handleAddEntry = async () => {
     const amount = parseFloat(inputAmount);
@@ -78,19 +54,6 @@ const EntryDetail: React.FC = () => {
     <Box align="center" pad="medium">
 
       <EntrySearch />
-      {/* <h1>Search Entries</h1> */}
-
-      {/* <Box direction="row" gap="small" margin={{ bottom: 'medium' }}>
-        <TextInput
-          placeholder="Enter Entry ID"
-          value={inputId}
-          onChange={(event) => setInputId(event.target.value)}
-        />
-        <Button label="Search by ID" onClick={handleSearchById} primary />
-      </Box> */}
-
-      {loading && <p>Loading...</p>}
-      {searchedEntry && <EntryCard entry={searchedEntry} />}
 
       <h1>Create New Entry</h1>
       <Box pad='medium' direction="row" gap="small">

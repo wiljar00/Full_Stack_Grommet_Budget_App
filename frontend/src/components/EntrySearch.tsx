@@ -1,5 +1,6 @@
 import { Box, Button, TextInput } from "grommet";
 import { useState } from "react";
+import EntryCard from "./EntryCard";
 
 interface Entry {
     id: number;
@@ -8,12 +9,10 @@ interface Entry {
     date: string;
 }
 
-const EntrySearch = () => {
+const EntrySearch = (imputId: any) => {
     const [inputId, setInputId] = useState('');
     const [loading, setLoading] = useState(false);
     const [searchedEntry, setSearchedEntry] = useState<Entry | null>(null);
-
-
 
     const fetchEntryById = async (id: number) => {
         try {
@@ -49,6 +48,9 @@ const EntrySearch = () => {
                 />
                 <Button label="Search by ID" onClick={handleSearchById} primary />
             </Box>
+
+            {loading && <p>Loading...</p>}
+            {searchedEntry && <EntryCard entry={searchedEntry} />}
         </div>
     );
 }
