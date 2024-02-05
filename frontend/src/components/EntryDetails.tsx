@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Box, Button, TextInput, DateInput } from 'grommet';
 import EntryCard from './EntryCard'; 
+import EntrySearch from './EntrySearch';
 
 interface Entry {
   id: number;
@@ -75,16 +76,18 @@ const EntryDetail: React.FC = () => {
 
   return (
     <Box align="center" pad="medium">
-      <h1>Search Entries</h1>
 
-      <Box direction="row" gap="small" margin={{ bottom: 'medium' }}>
+      <EntrySearch />
+      {/* <h1>Search Entries</h1> */}
+
+      {/* <Box direction="row" gap="small" margin={{ bottom: 'medium' }}>
         <TextInput
           placeholder="Enter Entry ID"
           value={inputId}
           onChange={(event) => setInputId(event.target.value)}
         />
         <Button label="Search by ID" onClick={handleSearchById} primary />
-      </Box>
+      </Box> */}
 
       {loading && <p>Loading...</p>}
       {searchedEntry && <EntryCard entry={searchedEntry} />}
