@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Button, TextInput, DateInput } from 'grommet';
-import EntryCard from './EntryCard'; // Import your EntryCard component
+import EntryCard from './EntryCard'; 
 
 interface Entry {
   id: number;
@@ -40,7 +40,6 @@ const EntryDetail: React.FC = () => {
   };
 
   const onDateChange = (value: any) => {
-    // This is to fix a typescript error. Need to research better ways to handle this. 
     setInputDate(value)
 }
 
@@ -48,7 +47,7 @@ const EntryDetail: React.FC = () => {
     const amount = parseFloat(inputAmount);
     if (!isNaN(amount) && inputDescription.trim() !== '') {
       const newEntry: Entry = {
-        id: entries.length + 1, // Auto-increment ID or handle it appropriately in your backend
+        id: entries.length + 1, // Auto-increment ID 
         amount,
         description: inputDescription,
         date: inputDate || new Date().toISOString(),
