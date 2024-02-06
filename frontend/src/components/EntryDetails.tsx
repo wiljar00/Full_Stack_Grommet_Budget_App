@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Box, Button, TextInput, DateInput } from 'grommet';
 import EntryCard from './EntryCard'; 
-import EntrySearch from './EntrySearch';
 
 interface Entry {
   id: number;
@@ -52,8 +51,6 @@ const EntryDetail: React.FC = () => {
 
   return (
     <Box align="center" pad="medium">
-
-      <EntrySearch />
 
       <h1>Create New Entry</h1>
       <Box pad='medium' direction="row" gap="small">
