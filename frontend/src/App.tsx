@@ -9,6 +9,7 @@ import IncomePage from './components/IncomePage';
 import CombinedPage from './components/CombinedPage';
 import EntryDetail from './components/EntryDetails';
 import EntrySearch from './components/EntrySearch';
+import AppTabs from './components/AppTabs';
 
 const theme = deepMerge(
   grommet,
@@ -63,51 +64,7 @@ function App() {
         </AppBar>
         <PageContent>
           <br />
-          <Tabs>
-            <Tab title="Expenses">
-              <Box pad="medium">
-                <ExpensePage />
-              </Box>
-            </Tab>
-            <Tab title="Income">
-              <Box pad="medium">
-                <IncomePage />
-              </Box>
-            </Tab>
-            <Tab title="Combined view">
-              <CombinedPage />
-            </Tab>
-            <Tab title="Budget Summary">
-              <Box pad="medium">
-                <BudgetTable />
-              </Box>
-            </Tab>
-
-            <Tab title="Card Samples">
-              <Box pad="medium">
-                <SampleCard />
-              </Box>
-            </Tab>
-
-            <Tab title='Search Entries'>
-              <Box align="center" pad="medium">
-                <EntrySearch />
-              </Box>
-            </Tab>
-
-            
-            <Tab title='Create Entry'>
-              <EntryDetail />
-            </Tab>
-
-            <Tab title='TestForm'>
-              <Box align="center" pad="medium">
-                <EntryDetail />
-              </Box>
-            </Tab>
-
-          </Tabs>
-
+          <AppTabs />
         </PageContent>
       </Main>
     </Grommet>
