@@ -6,6 +6,7 @@ import BudgetTable from "./BudgetTable";
 import SampleCard from "./SampleCard";
 import EntrySearch from "./EntrySearch";
 import EntryDetail from "./EntryDetails";
+import CompleteEntries from "./CompleteEntries";
 
 const AppTabs = () => {
     return (
@@ -45,6 +46,12 @@ const AppTabs = () => {
             
             <Tab title='Create Entry'>
               <EntryDetail />
+            </Tab>
+
+            <Tab title='All Entries'>
+              <Box align="center" pad="medium">
+                <CompleteEntries />
+              </Box>
             </Tab>
 
             <Tab title='TestForm'>
