@@ -9,8 +9,8 @@ import EntryDetail from "./EntryDetails";
 
 const AppTabs = () => {
     return (
-        <div>
-            <Tabs>
+        <Box fill>
+            <Tabs flex>
             <Tab title="Expenses">
               <Box pad="medium">
                 <ExpensePage />
@@ -54,8 +54,16 @@ const AppTabs = () => {
             </Tab>
 
           </Tabs>
-        </div>
+        </Box>
     );
 }
+
+
+
+export const Scrollable = () => <AppTabs />;
+
+Scrollable.args = {
+  full: true,
+};
 
 export default AppTabs;
