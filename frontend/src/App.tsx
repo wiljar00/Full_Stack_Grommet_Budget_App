@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Button, Grommet, Header, Main, PageContent, Tab, Tabs, Text, grommet } from 'grommet';
+import { Box, Button, Grommet, Header, Main, PageContent, Text, grommet } from 'grommet';
 import { Moon, Sun } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
-import SampleCard from './components/SampleCard';
-import BudgetTable from './components/BudgetTable';
-import ExpensePage from './components/ExpensePage';
-import IncomePage from './components/IncomePage';
-import CombinedPage from './components/CombinedPage';
-import EntryDetail from './components/EntryDetails';
-import EntrySearch from './components/EntrySearch';
 import AppTabs from './components/AppTabs';
 
 const theme = deepMerge(
