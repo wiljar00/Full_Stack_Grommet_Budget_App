@@ -43,7 +43,6 @@ const CombinedPage: React.FC = () => {
             </Box>
         */}
 
-      <h1>Combined Page</h1>
       <IncomePage />
       <ExpensePage />
     </Box>

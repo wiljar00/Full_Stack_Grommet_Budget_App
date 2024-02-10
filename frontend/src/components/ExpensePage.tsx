@@ -13,7 +13,6 @@ const ExpensePage: React.FC = () => {
 
   return (
     <Box align="center" pad="medium">
-      <h1>Expense Page</h1>
       <InputForm entries={expenseEntries} setEntries={setExpenseEntries} entryType="expense" />
     </Box>
   );
