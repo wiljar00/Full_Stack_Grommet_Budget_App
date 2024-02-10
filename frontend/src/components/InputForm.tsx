@@ -53,7 +53,7 @@ const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType })
     const total = entries.reduce((acc, entry) => acc + entry.amount, 0);
 
     return (
-        <div>
+        <Box align="center" pad="medium">
             <Box direction="column">
                 <Heading level={2} alignSelf="center">{`${formatTitle(entryType)}`}</Heading>
 
@@ -102,7 +102,7 @@ const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType })
                     </Box>
                 </Layer>
             )}
-        </div>
+        </Box>
     );
 }
 

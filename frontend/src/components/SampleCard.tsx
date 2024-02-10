@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, CardHeader, Heading, Paragraph, ResponsiveContext } from "grommet";
+import { Box, Card, CardBody, CardFooter, CardHeader, Heading, Paragraph, ResponsiveContext } from "grommet";
 import { useContext } from "react";
 
 
@@ -34,11 +34,11 @@ const CardTemplate = ({ title } : { title:any }) => {
 
 const SampleCard = () => {
     return (
-        <div>
+        <Box align="center" pad="medium">
             <CardTemplate title={"Card 1"} />
             <CardTemplate title={"Card 2"}/>
             <CardTemplate title={"Card 3"}/>
-        </div>
+        </Box>
     );
 }
 

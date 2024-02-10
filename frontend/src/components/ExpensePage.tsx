@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputForm from "./InputForm";
+import { Box } from "grommet";
 
 interface Entry {
     amount: number;
@@ -11,10 +12,10 @@ const ExpensePage: React.FC = () => {
     const [expenseEntries, setExpenseEntries] = useState<Entry[]>([]);
 
   return (
-    <div>
+    <Box align="center" pad="medium">
       <h1>Expense Page</h1>
       <InputForm entries={expenseEntries} setEntries={setExpenseEntries} entryType="expense" />
-    </div>
+    </Box>
   );
 }
 

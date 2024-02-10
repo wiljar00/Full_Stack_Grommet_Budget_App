@@ -14,7 +14,7 @@ const BudgetTable = () => {
     const tableData = generateMonths(months);
 
     return (
-        <div>
+        <Box align="center" pad="medium">
             <DataTable
                 columns={[
                 {
@@ -38,7 +38,7 @@ const BudgetTable = () => {
                 ]}
                 data={tableData}
             />
-        </div>
+        </Box>
     );
 }
 

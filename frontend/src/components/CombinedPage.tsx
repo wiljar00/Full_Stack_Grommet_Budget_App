@@ -2,10 +2,11 @@ import React from "react";
 // import { Box, Tab, Tabs, Text } from "grommet";
 import IncomePage from "./IncomePage";
 import ExpensePage from "./ExpensePage";
+import { Box } from "grommet";
 
 const CombinedPage: React.FC = () => {
   return (
-    <div>
+    <Box align="center" pad="medium">
         {/* 
             This is ideally what I want to happen once I figure out how to combine entries across types. 
 
@@ -45,7 +46,7 @@ const CombinedPage: React.FC = () => {
       <h1>Combined Page</h1>
       <IncomePage />
       <ExpensePage />
-    </div>
+    </Box>
   );
 }
 
