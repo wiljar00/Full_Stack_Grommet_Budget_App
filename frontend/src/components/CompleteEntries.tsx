@@ -1,4 +1,4 @@
-import { Box, Button, TextInput } from "grommet";
+import { Box, Button } from "grommet";
 import EntryCard from "./EntryCard";
 import { useState } from "react";
 
@@ -12,17 +12,18 @@ interface Entry {
 
 const CompleteEntries = () => {
     const [loading, setLoading] = useState(false);
-    const [entries, setEntries] = useState<Entry | null>(null);
+    const [entries, setEntries] = useState<Entry[]>([]);
 
     const fetchEntries = async () => {
         try {
             setLoading(true);
             const response = await fetch(`http://localhost:5000/api/entries`);
-            const data: Entry = await response.json();
+            const data: Entry[] = await response.json();
             setEntries(data);
+            console.log(data);
         } catch (error) {
             console.error('Error fetching entry:', error);
-            setEntries(null);
+            setEntries([]);
         } finally {
             setLoading(false);
         }
@@ -37,9 +38,10 @@ const CompleteEntries = () => {
             </Box>
 
             {loading && <p>Loading...</p>}
-            {/* TODO: Show a card for every object */}
 
-            {/* {entries && <EntryCard entry={entries} />} */}
+            {entries.map(entry => (
+                <EntryCard key={entry.id} entry={entry} />
+            ))}
         </div>
     );
 }
