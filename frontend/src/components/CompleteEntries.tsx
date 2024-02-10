@@ -1,6 +1,6 @@
 import { Box, Button } from "grommet";
-import EntryCard from "./EntryCard";
 import { useState } from "react";
+import EntryFeed from "./EntryFeed";
 
 
 interface Entry {
@@ -40,9 +40,8 @@ const CompleteEntries = () => {
 
             {loading && <p>Loading...</p>}
 
-            {entries.map(entry => (
-                <EntryCard key={entry.id} entry={entry} />
-            ))}
+            {/* TODO: fix entry type once implemented */}
+            <EntryFeed entries={entries} entryType={''}/>
         </Box>
     );
 }
