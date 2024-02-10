@@ -37,7 +37,7 @@ const EntrySearch = (imputId: any) => {
     };
 
     return (
-        <div>
+        <Box align="center" pad="medium">
             <h1>Search Entries</h1>
 
             <Box direction="row" gap="small" margin={{ bottom: 'medium' }}>
@@ -51,7 +51,7 @@ const EntrySearch = (imputId: any) => {
 
             {loading && <p>Loading...</p>}
             {searchedEntry && <EntryCard entry={searchedEntry} />}
-        </div>
+        </Box>
     );
 }
 
