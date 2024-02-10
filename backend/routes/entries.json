@@ -70,5 +70,11 @@
     "amount": 22,
     "description": "test",
     "date": "2024-02-01T07:00:00.000Z"
+  },
+  {
+    "id": 13,
+    "amount": 111,
+    "description": "testing",
+    "date": "2024-02-01T07:00:00.000Z"
   }
 ]

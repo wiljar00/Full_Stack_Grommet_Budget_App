@@ -5,7 +5,7 @@ import CombinedPage from "./CombinedPage";
 import BudgetTable from "./BudgetTable";
 import SampleCard from "./SampleCard";
 import EntrySearch from "./EntrySearch";
-import EntryDetail from "./EntryDetails";
+import EntryCreate from "./EntryCreate";
 import CompleteEntries from "./CompleteEntries";
 
 const AppTabs = () => {
@@ -45,7 +45,7 @@ const AppTabs = () => {
 
             
             <Tab title='Create Entry'>
-              <EntryDetail />
+              <EntryCreate />
             </Tab>
 
             <Tab title='All Entries'>
@@ -56,7 +56,7 @@ const AppTabs = () => {
 
             <Tab title='TestForm'>
               <Box align="center" pad="medium">
-                <EntryDetail />
+                <EntryCreate />
               </Box>
             </Tab>
 

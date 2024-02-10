@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Box, Button, TextInput, DateInput } from 'grommet';
-import EntryCard from './EntryCard'; 
 
 interface Entry {
   id: number;
@@ -9,7 +8,7 @@ interface Entry {
   date: string;
 }
 
-const EntryDetail: React.FC = () => {
+const EntryCreate: React.FC = () => {
   const [inputAmount, setInputAmount] = useState('');
   const [inputDescription, setInputDescription] = useState('');
   const [inputDate, setInputDate] = useState('');
@@ -51,8 +50,6 @@ const EntryDetail: React.FC = () => {
 
   return (
     <Box align="center" pad="medium">
-
-      <h1>Create New Entry</h1>
       <Box pad='medium' direction="row" gap="small">
         <TextInput
           placeholder="Enter Amount"
@@ -71,15 +68,8 @@ const EntryDetail: React.FC = () => {
         />
         <Button label="Add Entry" onClick={handleAddEntry} primary />
       </Box>
-
-      <h2>Recent Entries</h2>
-      <Box direction="row" gap="small" margin={{ top: 'medium' }}>
-        {entries.map((entry) => (
-          <EntryCard key={entry.id} entry={entry} />
-        ))}
-      </Box>
     </Box>
   );
 };
 
-export default EntryDetail;
+export default EntryCreate;
