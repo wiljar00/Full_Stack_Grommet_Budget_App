@@ -30,11 +30,12 @@ const CompleteEntries = () => {
     };
 
     return (
-        <div>
-            <h1>Search Entries</h1>
+        <Box align="center" pad="medium">
+            <h1>All Entries</h1>
+            <p>Note: This searches the backend server for all records.</p>
 
             <Box direction="row" gap="small" margin={{ bottom: 'medium' }}>
-                <Button label="Search by ID" onClick={fetchEntries} primary />
+                <Button label="Fetch" onClick={fetchEntries} primary />
             </Box>
 
             {loading && <p>Loading...</p>}
@@ -42,7 +43,7 @@ const CompleteEntries = () => {
             {entries.map(entry => (
                 <EntryCard key={entry.id} entry={entry} />
             ))}
-        </div>
+        </Box>
     );
 }
 
