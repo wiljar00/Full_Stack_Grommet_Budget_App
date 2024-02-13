@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
-import { Box, Button, Card, CardBody, DateInput, Heading, Layer, Text, TextInput } from "grommet";
+import { Box, Card, CardBody, Heading} from "grommet";
 import EntryFeed from "./EntryFeed";
+import EntryCreate from "./EntryCreate";
 
 interface Entry {
     amount: number;
@@ -16,35 +16,8 @@ interface InputFormProps {
 }
 
 const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType }) => {
-    const [inputAmount, setInputAmount] = useState('');
-    const [inputDescription, setInputDescription] = useState('');
-    const [inputDate, setInputDate] = useState(new Date().toLocaleDateString('en-US'));
-    // const [entries, setEntries] = useState<Entry[]>([]);
-    const [showError, setShowError] = useState(false);
 
-    const addEntry = () => {
-        const amount = parseFloat(inputAmount);
-        if (!isNaN(amount) && inputDescription.trim() !== '') {
-            const newEntry: Entry = { amount, description: inputDescription, date: inputDate };
-            setEntries(prevEntries => [...prevEntries, newEntry]);
-            setInputAmount('');
-            setInputDescription('');
-            setInputDate('');
-        } else {
-            setShowError(true);
-        }
-    }
 
-    const onDateChange = (value: any) => {
-        // This is to fix a typescript error. Need to research better ways to handle this. 
-        setInputDate(value)
-    }
-
-    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
-            addEntry();
-        }
-    }
 
     function formatTitle(string : string) {
         return string.charAt(0).toUpperCase() + string.slice(1) + ' Entries';
@@ -63,7 +36,7 @@ const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType })
                     <CardBody pad="medium">{`Total: $ ${total.toFixed(2)}`}</CardBody>
                 </Card>
 
-                <Box direction="row">
+                {/* <Box direction="row">
                     <TextInput
                         placeholder="Enter amount..."
                         value={inputAmount}
@@ -82,12 +55,13 @@ const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType })
                         onChange={(event) => onDateChange(event.value)}
                     />
                     <Button primary label="Add" onClick={addEntry} />
-                </Box>
+                </Box> */}
+                <EntryCreate />
 
                 <EntryFeed entries={entries} entryType={entryType}/>
             </Box>
 
-            {showError && (
+            {/* {showError && (
                 <Layer
                     position="center"
                     modal
@@ -101,7 +75,7 @@ const InputForm: React.FC<InputFormProps> = ({ entries, setEntries, entryType })
                         <Button label="OK" onClick={() => setShowError(false)} />
                     </Box>
                 </Layer>
-            )}
+            )} */}
         </Box>
     );
 }
